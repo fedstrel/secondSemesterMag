@@ -30,7 +30,7 @@ public class Main {
                 .addColumn("Модуль разницы между значениями", 0)
                 .data();
 
-        FunctionApproximator approximator = CosApproximator();
+        FunctionApproximator approximator = chooseFunction();
 
         System.out.println("Введите количество точек, на которые будет разбит отрезок.");
         int count = Integer.parseInt(reader.readLine());
@@ -61,5 +61,24 @@ public class Main {
                 String.valueOf(Math.abs(correct - approx))));
 
         System.out.println(tableBuilder.getTable());
+    }
+
+    private static FunctionApproximator chooseFunction() {
+        System.out.println("Введите 0, если будем вычислять косинус");
+        System.out.println("Введите 1, если будем вычислять синус");
+        System.out.println("Введите что угодно кроме, если хотите экстренно завершить работу приложения");
+        try {
+            int value = Integer.parseInt(reader.readLine());
+            switch (value) {
+                case 0:
+                    return new CosApproximator();
+                case 1:
+                    return new SinApproximator();
+                default:
+                    throw new HardShutDownException("Эктренное завершение работы");
+            }
+        } catch (Exception e) {
+            throw new HardShutDownException("Экстренное завершение работы");
+        }
     }
 }
