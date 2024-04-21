@@ -1,4 +1,4 @@
-package org.example.exception;
+package exception;
 
 public class HardShutDownException extends RuntimeException {
     public HardShutDownException(String message) {

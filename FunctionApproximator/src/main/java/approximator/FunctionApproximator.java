@@ -1,4 +1,4 @@
-package org.example.functionApproximation;
+package approximator;
 
 public abstract class FunctionApproximator {
     protected double[] definedOn = new double[2];
