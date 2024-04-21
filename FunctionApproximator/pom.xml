@@ -4,9 +4,15 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>f-strelnikov</groupId>
+    <parent>
+        <groupId>f-strelnikov</groupId>
+        <artifactId>TaskNumberOne</artifactId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+
     <artifactId>FunctionApproximator</artifactId>
-    <version>1.0.0</version>
+    <version>1.1-SNAPSHOT</version>
+    <packaging>jar</packaging>
 
     <properties>
         <maven.compiler.source>19</maven.compiler.source>
