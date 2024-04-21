@@ -1,18 +1,15 @@
-package org.example.tableBuilder;
+package builder;
 
+import exception.InvalidArgumentException;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.tuple.Pair;
-import org.example.exception.InvalidArgumentException;
-import org.example.exception.InvalidOperationClass;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.TreeMap;
 
 public class TableBuilder {
     private StringBuilder builder = new StringBuilder();
     private List<Pair<String, Integer>> columns = new ArrayList<>();
-    private int rows = 0;
     private int sumLength = 0;
 
     public class TableBuilderRowClass {
@@ -21,7 +18,6 @@ public class TableBuilder {
             if (values.size() != columns.size())
                 throw new InvalidArgumentException("Количество значений должно быть равно значению колонок");
 
-            rows++;
             builder.append("|");
             for (int i = 0; i < columns.size(); i++) {
                 builder
@@ -41,9 +37,6 @@ public class TableBuilder {
     }
 
     public TableBuilder addColumn(String name, int size) {
-        if (rows != 0)
-            throw new InvalidOperationClass("Нельзя добавить ряд после добавления колонки");
-
         if (size < name.length())
             size = name.length() + 2;
         columns.add(Pair.of(name, size));
@@ -53,7 +46,7 @@ public class TableBuilder {
     }
     public TableBuilderRowClass data() {
         builder.append("| ");
-        columns.stream().forEach( (it) ->
+        columns.forEach( (it) ->
             builder.append(it.getLeft())
                     .append(StringUtils.repeat(' ', it.getRight() - it.getLeft().length() - 2))
                     .append(" | ")
@@ -67,7 +60,6 @@ public class TableBuilder {
                 .append('\n');
     }
     private void clean() {
-        rows = 0;
         columns = new ArrayList<>();
         builder = new StringBuilder();
     }

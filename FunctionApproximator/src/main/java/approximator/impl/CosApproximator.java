@@ -1,7 +1,7 @@
-package org.example.functionApproximation.impl;
+package approximator.impl;
 
-import org.example.exception.InvalidArgumentException;
-import org.example.functionApproximation.FunctionApproximator;
+import approximator.FunctionApproximator;
+import exception.InvalidArgumentException;
 
 public class CosApproximator extends FunctionApproximator {
     public CosApproximator() {

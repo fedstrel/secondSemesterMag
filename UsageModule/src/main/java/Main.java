@@ -1,5 +1,3 @@
-package org.example;
-
 /*
 *   Необходимо аппроксимировать значение функции y = cos(x)
 *   при помощи ряда Тейлора с заданной точностью на промежутке [-1; 1].
@@ -8,11 +6,11 @@ package org.example;
 *   |___|_________________________|__________________________|_________________________________|
 * */
 
-import org.example.exception.HardShutDownException;
-import org.example.functionApproximation.FunctionApproximator;
-import org.example.functionApproximation.impl.CosApproximator;
-import org.example.functionApproximation.impl.SinApproximator;
-import org.example.tableBuilder.TableBuilder;
+import approximator.FunctionApproximator;
+import approximator.impl.CosApproximator;
+import approximator.impl.SinApproximator;
+import builder.TableBuilder;
+import exception.HardShutDownException;
 
 import java.io.BufferedReader;
 import java.io.IOException;
