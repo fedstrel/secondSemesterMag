@@ -22,6 +22,20 @@
 
     <dependencies>
         <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+            <version>5.9.1</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.assertj</groupId>
+            <artifactId>assertj-core</artifactId>
+            <version>3.23.1</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
             <groupId>org.jacoco</groupId>
             <artifactId>jacoco-maven-plugin</artifactId>
             <version>0.8.12</version>
@@ -44,7 +58,7 @@
                     <execution>
                         <id>default-report</id>
                         <goals>
-                            <goal>report</goal>
+                            <goal>report-aggregate</goal>
                         </goals>
                     </execution>
                     <execution>
