@@ -9,7 +9,7 @@ pipeline {
         }
         stage("RunTestsOnFeature") {
             when {
-                branch 'feature-*'
+                branch 'feature-jenkins-*'
             }
             steps {
                 bat 'mvn test'
@@ -25,7 +25,7 @@ pipeline {
         }
         stage("ReportCoverage") {
             when {
-                branch 'feature-*'
+                branch 'feature-jenkins-*'
             }
             steps {
                 junit testResults: '**/surefire-reports/*.xml'
