@@ -46,7 +46,7 @@ public class TableBuilder {
     }
     public TableBuilderRowClass data() {
         builder.append("| ");
-        columns.forEach( (it) ->
+        columns.forEach( it ->
             builder.append(it.getLeft())
                     .append(StringUtils.repeat(' ', it.getRight() - it.getLeft().length() - 2))
                     .append(" | ")

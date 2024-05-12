@@ -18,7 +18,7 @@ import java.io.InputStreamReader;
 import java.util.List;
 
 public class Main {
-    static BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+    private static final BufferedReader READER = new BufferedReader(new InputStreamReader(System.in));
     public static void main(String[] args) throws IOException {
         TableBuilder builder = new TableBuilder();
         TableBuilder.TableBuilderRowClass tableBuilder = builder
@@ -31,9 +31,9 @@ public class Main {
         FunctionApproximator approximator = chooseFunction();
 
         System.out.println("Введите количество точек, на которые будет разбит отрезок.");
-        int count = Integer.parseInt(reader.readLine());
+        int count = Integer.parseInt(READER.readLine());
         System.out.println("Введите точность с которой будет приближаться значение.");
-        double accuracy = Double.parseDouble(reader.readLine());
+        double accuracy = Double.parseDouble(READER.readLine());
 
         double upperBound = approximator.getUpperBound();
         double x = approximator.getLowerBound();
@@ -66,7 +66,7 @@ public class Main {
         System.out.println("Введите 1, если будем вычислять синус");
         System.out.println("Введите что угодно кроме, если хотите экстренно завершить работу приложения");
         try {
-            int value = Integer.parseInt(reader.readLine());
+            int value = Integer.parseInt(READER.readLine());
             switch (value) {
                 case 0:
                     return new CosApproximator();

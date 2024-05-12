@@ -2,8 +2,8 @@ package approximator;
 
 public abstract class FunctionApproximator {
     protected double[] definedOn = new double[2];
-    abstract public double findFunctionAtPointApprox(double x, double accuracy);
-    abstract public double findFunctionAtPointExact(double x);
+    public abstract double findFunctionAtPointApprox(double x, double accuracy);
+    public abstract double findFunctionAtPointExact(double x);
     public double getLowerBound() {
         return definedOn[0];
     }
