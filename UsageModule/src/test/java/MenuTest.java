@@ -2,8 +2,7 @@ import exception.HardShutDownException;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-public class MenuTest1 {
-
+public class MenuTest {
     @Test
     public void shouldThrowHarShutDownExceptionTest() {
         Assertions.assertThatCode(
