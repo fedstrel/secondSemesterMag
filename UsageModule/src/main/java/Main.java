@@ -61,22 +61,26 @@ public class Main {
         System.out.println(tableBuilder.getTable());
     }
 
-    private static FunctionApproximator chooseFunction() {
+    public static FunctionApproximator chooseFunction() {
         System.out.println("Введите 0, если будем вычислять косинус");
         System.out.println("Введите 1, если будем вычислять синус");
         System.out.println("Введите что угодно кроме, если хотите экстренно завершить работу приложения");
         try {
             int value = Integer.parseInt(reader.readLine());
-            switch (value) {
-                case 0:
-                    return new CosApproximator();
-                case 1:
-                    return new SinApproximator();
-                default:
-                    throw new HardShutDownException("Эктренное завершение работы");
-            }
+            return getApproxByInput(value);
         } catch (Exception e) {
             throw new HardShutDownException("Экстренное завершение работы");
+        }
+    }
+
+    public static FunctionApproximator getApproxByInput(int input) {
+        switch (input) {
+            case 0:
+                return new CosApproximator();
+            case 1:
+                return new SinApproximator();
+            default:
+                throw new HardShutDownException("Эктренное завершение работы");
         }
     }
 }
