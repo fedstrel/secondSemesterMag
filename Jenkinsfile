@@ -23,7 +23,7 @@ pipeline {
         }
         stage("Checkstyle") {
             when {
-                branch 'develop'
+                branch 'feature-jenkins-*'
             }
             steps {
                 sh 'mvn checkstyle:check'
