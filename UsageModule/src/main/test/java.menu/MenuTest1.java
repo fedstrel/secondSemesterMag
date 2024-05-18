@@ -8,6 +8,6 @@ public class MenuTest1 {
     public void shouldThrowHarShutDownExceptionTest() {
         Assertions.assertThatCode(
                 () -> Main.getApproxByInput(3)
-        ).isExactlyInstanceOf(HardShutDownException.class);
+        ).isExactlyInstanceOf(HardShutDownException.class).hasMessage("Эктренное завершение работы");
     }
 }
