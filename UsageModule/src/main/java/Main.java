@@ -18,7 +18,7 @@ import java.io.InputStreamReader;
 import java.util.List;
 
 public class Main {
-    static BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+    private static BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
     public static void main(String[] args) throws IOException {
         TableBuilder builder = new TableBuilder();
         TableBuilder.TableBuilderRowClass tableBuilder = builder
